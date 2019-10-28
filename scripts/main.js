@@ -58,11 +58,11 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   });
 } else {
   console.warn('Push messaging is not supported');
-  if (!'serviceWorker' in navigator && !'PushManager' in window) {
+  if (!('serviceWorker' in navigator) && !('PushManager' in window)) {
     pushButton.textContent = 'サポート対象外('serviceWorker', 'PushManager')';
-  } else if (!'serviceWorker' in navigator) {
+  } else if (!('serviceWorker' in navigator)) {
     pushButton.textContent = 'サポート対象外('serviceWorker')';
-  } else if (!'PushManager' in window) {
+  } else if (!('PushManager' in window)) {
     pushButton.textContent = 'サポート対象外('PushManager')';
   }
 }
